@@ -1,17 +1,20 @@
 const table=document.getElementById('sampleTable');
 let row=3;
-let col=3;
+
 function insert_Row() {
     //Write your code here
 	
-	int tr=document.createElement('tr');
-	int td=document.createElement('td');
-	td.textContent=`Row${row} cell${col}`;
+	let tr=document.createElement('tr');
+	let td1=document.createElement('td');
+	td1.textContent=`Row${row} cell1`;
 	
-	tr.appendChild(td);
+	let td2=document.createElement('td');
+	td2.textContent=`Row${row} cell2`;
+	
+	tr.append(td1,td2);
      table.appendChild(tr);
 	row++;
-	col++;
+
   
   
 }
