@@ -10,9 +10,18 @@ function insert_Row() {
 	
     tr.append(td1, td2);
 
-    // Get the first row of the table
-    let firstRow = table.getElementsByTagName('tr')[0];
+     // Get the table body
+    let tbody = document.querySelector('#sampleTable tbody');
 
-    // Insert the new row before the first row
-    table.insertBefore(tr, firstRow);
+    // Get the first row of the table body
+    let firstRow = tbody.getElementsByTagName('tr')[0];
+
+    // Check if firstRow exists
+    if (firstRow) {
+        // If it exists, insert the new row before the first row
+        tbody.insertBefore(tr, firstRow);
+    } else {
+        // If it doesn't exist, just append the new row to the table body
+        tbody.appendChild(tr);
+    }
 }
